@@ -1,8 +1,9 @@
 Welcome to the documentation of the project "Pokedex"
 =====================================================
 
-**Author:** Pierre-Emmanuel Rebours  
-**contact:** pe.rebours@etu.emse.fr  
+:Author: Pierre-Emmanuel Rebours  
+:Contact: pe.rebours@etu.emse.fr 
+:Version: $1.0$ 
 This Project allows the user to find some pokemon data by giving the id of the pokemon.
 
 .. note::
