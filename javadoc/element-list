@@ -1,0 +1,5 @@
+com.example.pokedex
+com.example.pokedex.controllers
+com.example.pokedex.models
+com.example.pokedex.services
+com.example.pokedex.views
