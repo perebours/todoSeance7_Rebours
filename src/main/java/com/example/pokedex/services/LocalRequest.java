@@ -1,7 +1,7 @@
 package com.example.pokedex.services;
 
 
-import java.io.File;
+
 import java.sql.*;
 
 /**
@@ -13,56 +13,47 @@ public class LocalRequest implements APIAccess {
      */
     public PokemonData Data = new PokemonData();
     /**
-     * Name of the local SQLite database
+     * url of the local SQLite database
      */
-    public String DatabaseName;
+    public String url;
 
     /**
      * Constructor of LocalRequest
      *
-     * @param name name of the local SQLite database
+     * @param url url of the local SQLite database
      */
-    public LocalRequest(String name) {
-        this.DatabaseName = name;
+    public LocalRequest(String url) {
+        this.url = url;
     }
 
     /**
-     * Setter for the name of the database
+     * Setter for the url
      *
-     * @param name Name that we want to set
+     * @param url url that we want to set
      */
-    public void setName(String name) {
-        this.DatabaseName = name;
-    }
-
-    /**
-     * Correct the name of the database if the one given by the user does not exist.
-     */
-    public void CorrectDatabaseName() {
-        File file = new File("ressources/" + this.DatabaseName);
-        if (!file.isFile()) {
-            System.out.println("The database "+this.DatabaseName+" does not exist.");
-            System.out.println("Database name is setting to the default one: pokemondatabase.sqlite");
-            setName("pokemondatabase.sqlite");
-        }
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     /**
      * Establish an SQL connection
      *
-     * @return a {@link Connection} object.
+     * @return a {@link Connection} object
+     * @throws SQLException If there is an SQL error in the catch part of the code.
      */
-    public Connection SQLConnection(){
+    public Connection SQLConnection() throws SQLException {
         /* Connect to the database */
         Connection conn = null;
-        CorrectDatabaseName();
         try {
             // create a connection to the database
-            conn = DriverManager.getConnection("jdbc:sqlite:ressources/" + this.DatabaseName);
+            conn = DriverManager.getConnection(this.url);
             System.out.println("Connection to SQLite has been established.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+            setUrl("jdbc:sqlite:ressources/pokemondatabase.sqlite");
+            System.out.println("Connection to " + this.url);
+            // create a connection to the database
+            conn = DriverManager.getConnection(this.url);
         }
         return conn;
     }

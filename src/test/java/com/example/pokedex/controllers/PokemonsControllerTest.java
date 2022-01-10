@@ -12,7 +12,7 @@ import org.junit.Test;
 public class PokemonsControllerTest {
 
     /**
-     * Ce test vérifie que la méthode `CreatePokemonfromdata` de la classe {@link DATAtoPokemon}
+     * Ce test vérifie que la méthode `getPokemon` de la classe {@link DATAtoPokemon}
      * renvoie bien une instance de la classe {@link PokemonDescribed}, dans le cas où le service
      * qui implémente l'interface {@link APIAccess} renvoit bien des données qui comprennent
      * une description de pokémon.
