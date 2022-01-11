@@ -16,5 +16,10 @@
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="GitLab" />
+      <option name="name" value="GitLab" />
+      <option name="url" value="https://gitlab.com/api/v4/groups/my-group/-/packages/maven" />
+    </remote-repository>
   </component>
 </project>
