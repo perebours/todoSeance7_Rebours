@@ -4,7 +4,7 @@ Author: Pierre-Emmanuel Rebours
 contact: pe.rebours@etu.emse.fr  
 This Project allows the user to find some pokemon data by giving the id of the pokemon.
 This Project was an exercice for my engineering studies to illustrate some good software development practices.
-
+You can find the documentation on https://todoseance7-rebours.readthedocs.io/en/latest/
 After cloning this repository, if you have a Java environment on your machine, you can directly run the commands.
 
 
