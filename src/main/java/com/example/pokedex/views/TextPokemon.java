@@ -3,7 +3,7 @@ package com.example.pokedex.views;
 import com.example.pokedex.models.Pokemon;
 
 /**
- * Methods useful to manage a text about a pokemon.
+ * Methods useful to manage a text about a {@link Pokemon}.
  */
 public interface TextPokemon {
     /**
